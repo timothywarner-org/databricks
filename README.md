@@ -1,2 +1,1 @@
-# databricks
-Databricks Certified Data Engineer Associate Crash Course 
+# Databricks Certified Data Engineer Associate Crash Course 
