@@ -15,9 +15,23 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - uses: tcort/markdown-link-check@v3.12.2 # Directly uses action to check links
+      - name: Check README Links
+        uses: tcort/markdown-link-check@v3.12.2
+        with:
+          file-path: README.md
+          report-style: markdown # Output report as Markdown format
 
-      - if: failure()
+      - name: Prettify and Display Report
+        if: failure()
         run: |
-          echo "❌ Invalid links:"
-          cat link-check-results.md # Default output file from tcort/markdown-link-check
+          echo "### 🚨 README Link Check Failed 🚨"
+
+          echo "#### ❌ Broken Links:"
+          awk '/^- \[x]/{print "* " $2 " (" $3 ")"}' link-check-results.md
+
+          echo ""
+          echo "#### ⚠️ Warnings:"
+          awk '/^- \[!]/{print "* " $2 " (" $3 ")"}' link-check-results.md
+
+          echo ""
+          echo "See 'link-check-results.md' for full details."
