@@ -16,7 +16,6 @@ A hand-curated learning resources list from me to you! Respectfully, Tim Warner
 - [Official exam guide](https://www.databricks.com/sites/default/files/2024-05/databricks-certified-data-engineer-associate-exam-guide.pdf)
 - [Exam registration with Webassessor](https://webassessor.com/databricks)
 - [Kryterion system check for online testing](https://www.kryterion.com/systemcheck/)
--
 
 ## Databricks Certified Data Engineer Associate tutorials
 
@@ -24,34 +23,24 @@ A hand-curated learning resources list from me to you! Respectfully, Tim Warner
 - [Official Databricks Instructor-Led Training](https://www.databricks.com/training/catalog)
 - [Databricks Skill Builder Videos for Data Engineers](https://www.youtube.com/@stephanieamrivera/videos)
 - [Data engineering learning resources](https://dataengineering.wiki/Learning+Resources)
--
 
 ## Databricks Certified Data Engineer Associate practice exams
 
-- [udemy 1](https://www.udemy.com/course/databricks-certified-associate-data-engineer-practice-tests/?referralCode=102E37D6BA7C7B8B5532)
-- [udemy 2](https://www.udemy.com/course/practice-exams-databricks-certified-data-engineer-associate/?expanded=1014944232)
-- s
-
+- sdf
 
 ## Official Databricks resources
 
 - [Databricks documentation home](https://docs.databricks.com/en/index.html)
 - [Databricks Community](https://community.databricks.com/)
 - [Databricks Blog](https://www.databricks.com/blog)
-- s
 
 ## Various Databricks resources
 
 - [Databricks on Stack Overflow](https://stackoverflow.com/questions/tagged/databricks)
--
-
-
 
 ## Apache Spark resources
 
 - [Apache Spark documentation](https://spark.apache.org/docs/latest/)
-- sadf
-
 
 ## Python resources
 
