@@ -1,0 +1,44 @@
+name: Check Readme Links
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install markdown-link-check
+        run: npm install -g markdown-link-check
+
+      - name: Check Readme Links
+        run: |
+          echo "Checking links in README.md..."
+          markdown-link-check --config .markdown-link-check.json README.md > link-report.txt
+
+      - name: Report Link Status
+        if: always()
+        run: |
+          echo "✅ Valid links:"
+          grep -o '\[.*\](http.*)\s.*' README.md | awk -F'[]()' '{print "- " $2, $4}' | grep -v 'ERROR:' | awk '{print "  - " $0}'
+
+          echo ""
+          echo "❌ Invalid links:"
+          grep -n -o '\[.*\](http.*)\s.*' README.md | awk -F'[]()' '{print "- Line " $1 ": [" $2 "](" $3 ") - " $5}' | grep 'ERROR:' | awk '{print "  - " $0}'
+
+          echo ""
+          echo "Full link report:"
+          cat link-report.txt

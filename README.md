@@ -1,1 +1,64 @@
-# Databricks Certified Data Engineer Associate Crash Course 
+# Databricks Certified Data Engineer Associate Crash Course
+
+A hand-curated learning resources list from me to you! Respectfully, Tim Warner
+
+## Contact information
+
+- [Tim Warner](mailto:timothywarner316@gmail.com)
+- [LinkedIn](https://www.linkedin.com/in/timothywarner/)
+- [Website](https://techtrainertim.com)
+- [Bluesky](https://bsky.app/profile/techtrainertim.bsky.social)
+- [Mastodon](https://mastodon.social/@techtrainertim)
+
+## Databricks Certified Data Engineer Associate certification
+
+- [Official certification page](https://www.databricks.com/learn/certification/data-engineer-associate)
+- [Official exam guide](https://www.databricks.com/sites/default/files/2024-05/databricks-certified-data-engineer-associate-exam-guide.pdf)
+- [Exam registration with Webassessor](https://webassessor.com/databricks)
+- [Kryterion system check for online testing](https://www.kryterion.com/systemcheck/)
+-
+
+## Databricks Certified Data Engineer Associate tutorials
+
+- [Databricks Academy](https://partner-academy.databricks.com/pages/21/home)
+- [Official Databricks Instructor-Led Training](https://www.databricks.com/training/catalog)
+- [Databricks Skill Builder Videos for Data Engineers](https://www.youtube.com/@stephanieamrivera/videos)
+- [Data engineering learning resources](https://dataengineering.wiki/Learning+Resources)
+-
+
+## Databricks Certified Data Engineer Associate practice exams
+
+- [udemy 1](https://www.udemy.com/course/databricks-certified-associate-data-engineer-practice-tests/?referralCode=102E37D6BA7C7B8B5532)
+- [udemy 2](https://www.udemy.com/course/practice-exams-databricks-certified-data-engineer-associate/?expanded=1014944232)
+- s
+
+
+## Official Databricks resources
+
+- [Databricks documentation home](https://docs.databricks.com/en/index.html)
+- [Databricks Community](https://community.databricks.com/)
+- [Databricks Blog](https://www.databricks.com/blog)
+- s
+
+## Various Databricks resources
+
+- [Databricks on Stack Overflow](https://stackoverflow.com/questions/tagged/databricks)
+-
+
+
+
+## Apache Spark resources
+
+- [Apache Spark documentation](https://spark.apache.org/docs/latest/)
+- sadf
+
+
+## Python resources
+
+
+## SQL resources
+
+
+## Azure Databricks resources
+
+- sdf
