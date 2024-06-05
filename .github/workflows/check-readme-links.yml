@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - uses: tcort/markdown-link-check@v2 # Directly uses action to check links
+      - uses: tcort/markdown-link-check@v3.12.2 # Directly uses action to check links
 
       - if: failure()
         run: |
