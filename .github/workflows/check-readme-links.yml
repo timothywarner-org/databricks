@@ -13,11 +13,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - uses: tcort/markdown-link-check@v2 # Directly uses action to check links
+      - name: Check README Links
+        uses: lycheeverse/lychee-action@v1
+        with:
+          args: --verbose README.md # Limit the scope to README.md, verbose for details
+          fail: true # Fail the action if broken links are found
 
-      - if: failure()
+      - name: Prettify and Display Report (if failed)
+        if: failure()
         run: |
-          echo "❌ Invalid links:"
-          cat link-check-results.md # Default output file from tcort/markdown-link-check
+          echo "### 🚨 README Link Check Failed 🚨"
+
+          echo "#### ❌ Broken Links:"
+          awk '/[x]/{print "* " $2 " (" $3 ")"}' lychee/out.md 
+
+          echo ""
+          echo "#### ⚠️ Warnings:"
+          awk '/[!]/ && !/[x]/{print "* " $2 " (" $3 ")"}' lychee/out.md
+
+          echo ""
+          echo "See 'lychee/out.md' for full details."
