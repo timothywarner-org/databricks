@@ -1,0 +1,100 @@
+{
+  "cluster_policy_name": "TeachingClusterPolicyWithLibraries",
+  "cluster_policy_description": "Policy to enforce single user clusters, use of instance pool, service principal, and pre-installed libraries for teaching examples.",
+  "policy": {
+    "spark_version": {
+      "type": "fixed",
+      "value": "7.3.x-scala2.12"
+    },
+    "node_type_id": {
+      "type": "fixed",
+      "value": "default-instance-pool"
+    },
+    "num_workers": {
+      "type": "range",
+      "minValue": 1,
+      "maxValue": 1,
+      "defaultValue": 1
+    },
+    "cluster_log_conf": {
+      "type": "fixed",
+      "value": {
+        "dbfs": {
+          "destination": "dbfs:/cluster-logs"
+        }
+      }
+    },
+    "autotermination_minutes": {
+      "type": "fixed",
+      "value": 60
+    },
+    "spark_conf": {
+      "type": "fixed",
+      "value": {
+        "spark.databricks.service.client.id": "{{secrets/my-secrets/client-id}}",
+        "spark.databricks.service.tenant.id": "{{secrets/my-secrets/tenant-id}}",
+        "spark.databricks.service.secret": "{{secrets/my-secrets/secret}}"
+      }
+    },
+    "custom_tags": {
+      "type": "fixed",
+      "value": {
+        "Project": "TeachingExamples",
+        "Owner": "SingleUser"
+      }
+    },
+    "cluster_permissions": {
+      "type": "fixed",
+      "value": {
+        "user_access_control": {
+          "all_permissions": [
+            {
+              "user_name": "*",
+              "permission_level": "CAN_MANAGE"
+            }
+          ]
+        }
+      }
+    },
+    "enable_elastic_disk": {
+      "type": "fixed",
+      "value": true
+    },
+    "libraries": {
+      "type": "fixed",
+      "value": [
+        {
+          "pypi": {
+            "package": "pandas"
+          }
+        },
+        {
+          "pypi": {
+            "package": "numpy"
+          }
+        },
+        {
+          "pypi": {
+            "package": "scikit-learn"
+          }
+        },
+        {
+          "pypi": {
+            "package": "matplotlib"
+          }
+        },
+        {
+          "pypi": {
+            "package": "seaborn"
+          }
+        },
+        {
+          "pypi": {
+            "package": "pyarrow"
+          }
+        },
+        {
+          "pypi": {
+            "package": "requests"
+          }
+
