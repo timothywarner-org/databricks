@@ -26,7 +26,8 @@ A hand-curated learning resources list from me to you! Respectfully, Tim Warner
 
 ## Databricks Certified Data Engineer Associate practice exams
 
-- sdf
+- [Databricks Certified Data Engineer Associate practice questions [GitHub]](https://github.com/Amrit-Hub/Databricks-Certified-Data-Engineer-Associate-Questions)
+- [Udemy: Practice Exams: Databricks Certified Data Engineer Associate](https://www.udemy.com/course/practice-exams-databricks-certified-data-engineer-associate/)
 
 ## Official Databricks resources
 
@@ -38,16 +39,3 @@ A hand-curated learning resources list from me to you! Respectfully, Tim Warner
 
 - [Databricks on Stack Overflow](https://stackoverflow.com/questions/tagged/databricks)
 
-## Apache Spark resources
-
-- [Apache Spark documentation](https://spark.apache.org/docs/latest/)
-
-## Python resources
-
-
-## SQL resources
-
-
-## Azure Databricks resources
-
-- sdf
