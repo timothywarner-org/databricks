@@ -1,0 +1,72 @@
+# Databricks notebook source
+# MAGIC %md
+# MAGIC ## Sample ETL Process with PySpark and Spark SQL
+
+# COMMAND ----------
+
+# Step 1: Import necessary libraries
+from pyspark.sql import SparkSession
+from pyspark.sql.functions import col, when
+
+# COMMAND ----------
+
+# Step 2: Create a SparkSession (automatically available in Databricks)
+spark = SparkSession.builder.appName("ETL Example").getOrCreate()
+
+# COMMAND ----------
+
+# Step 3: Load Data
+# Loading a sample CSV file into a DataFrame
+df = spark.read.csv("/databricks-datasets/airlines/part-00000", header=True, inferSchema=True)
+
+# COMMAND ----------
+
+# Step 4: Data Exploration
+# Display the first few rows of the DataFrame
+df.show(5)
+
+# COMMAND ----------
+
+# Step 5: Data Transformation with PySpark
+# Let's clean up some data, e.g., replacing null values in the 'ArrDelay' column with 0
+df_cleaned = df.withColumn("ArrDelay", when(col("ArrDelay").isNull(), 0).otherwise(col("ArrDelay")))
+
+# COMMAND ----------
+
+# Step 6: Data Transformation with Spark SQL
+# Register the DataFrame as a SQL temporary view
+df_cleaned.createOrReplaceTempView("flights")
+
+# COMMAND ----------
+
+# Use Spark SQL to perform a simple transformation
+transformed_df = spark.sql("""
+    SELECT 
+        Year, 
+        Month, 
+        DayOfMonth, 
+        Carrier, 
+        Origin, 
+        Dest, 
+        ArrDelay 
+    FROM flights 
+    WHERE ArrDelay > 15
+""")
+
+# COMMAND ----------
+
+# Step 7: Show the results of the transformation
+transformed_df.show(5)
+
+# COMMAND ----------
+
+# Step 8: Save the transformed data
+# Saving the transformed data to a Parquet file
+transformed_df.write.mode("overwrite").parquet("/tmp/transformed_flights")
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC ## Conclusion
+# MAGIC This notebook demonstrated how to load, transform, and save data using both PySpark and Spark SQL in Databricks. You can adapt this example to fit your specific ETL requirements.
+
