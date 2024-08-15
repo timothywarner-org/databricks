@@ -18,6 +18,13 @@ A hand-curated learning resources list from me to you! Respectfully, Tim Warner
 - [Practice Exams: Databricks Certified Data Engineer Associate](https://www.udemy.com/course/practice-exams-databricks-certified-data-engineer-associate/?couponCode=KEEPLEARNING)
 - [Git client](https://git-scm.com/)
 
+## Tim's Essential Languages
+
+- Intermediate SQL (Databricks SQL; Pyspark; Spark SQL)
+- General Python (Intro)
+- General Git (Intro, branching)
+- 
+
 ## Databricks Certified Data Engineer Associate certification
 
 - [Official certification page](https://www.databricks.com/learn/certification/data-engineer-associate)
