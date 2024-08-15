@@ -1,4 +1,4 @@
-# Get all network adapters
+# Get network adapter
 $adapters = Get-NetAdapter
 
 # Filter out virtual and disabled adapters
