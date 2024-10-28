@@ -6,4 +6,22 @@ matplotlib & seaborn - Data visualization
 scikit-learn - Machine learning
 tensorflow & pytorch - Deep learning frameworks
 
+prepping for databricks data enga associate exam.  Identify Git operations available via Databricks Repos. please give very ver terse explanation and working
+Assistant
+Databricks Repos support the following Git operations:
 
+Clone: Create a Git folder in Databricks by cloning a remote repository.
+Branch: Manage branches within the Git folder.
+Commit: Save changes to the local repository with a commit message.
+Push: Upload local commits to the remote repository.
+Pull: Fetch and integrate changes from the remote repository.
+Diff: View differences between file versions.
+These operations can be performed directly from the Databricks UI.
+
+
+CREATE OR REFRESH STREAMING LIVE TABLE orders_silver
+(CONSTRAINT valid_date EXPECT (order_timestamp > "2021-01-01") ON VIOLATION dFAIL UPDATE)
+COMMENT "Append only orders with valid timestamps"
+TBLPROPERTIES ("quality" = "silver")
+AS SELECT timestamp(order_timestamp) AS order_timestamp, * EXCEPT (order_timestamp, source_file, _rescued_data)
+FROM STREAM(LIVE.orders_bronze)

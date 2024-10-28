@@ -17,13 +17,13 @@ A hand-curated learning resources list from me to you! Respectfully, Tim Warner
 - [NYC Taxi & Limousine Commission - yellow taxi trip records](https://learn.microsoft.com/en-us/azure/open-datasets/dataset-taxi-yellow?tabs=pyspark)
 - [Practice Exams: Databricks Certified Data Engineer Associate](https://www.udemy.com/course/practice-exams-databricks-certified-data-engineer-associate/?couponCode=KEEPLEARNING)
 - [Git client](https://git-scm.com/)
+- [Lenni Lobel's Pluralsight course on SQL to NoSQL migrations](https://www.pluralsight.com/courses/data-modeling-partitioning-patterns-azure-cosmos-db)
 
 ## Tim's Essential Languages
 
 - Intermediate SQL (Databricks SQL; Pyspark; Spark SQL)
 - General Python (Intro)
 - General Git (Intro, branching)
-- 
 
 ## Databricks Certified Data Engineer Associate certification
 

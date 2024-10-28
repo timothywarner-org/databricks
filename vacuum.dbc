@@ -1,0 +1,34 @@
+# Databricks notebook source
+# MAGIC %md
+# MAGIC # Demonstration of VACUUM Command
+# MAGIC 
+# MAGIC This notebook demonstrates how to use the `VACUUM` command to delete old data files in a Delta Lake table.
+
+# COMMAND ----------
+
+# Create a Delta table
+data = spark.range(0, 5)
+data.write.format("delta").save("/tmp/delta-table")
+
+# COMMAND ----------
+
+# Update the Delta table
+data = spark.range(5, 10)
+data.write.format("delta").mode("append").save("/tmp/delta-table")
+
+# COMMAND ----------
+
+# Display the Delta table
+df = spark.read.format("delta").load("/tmp/delta-table")
+df.show()
+
+# COMMAND ----------
+
+# Perform VACUUM to remove old data files
+# Note: The default retention period is 7 days. To override, use the RETAIN keyword.
+spark.sql("VACUUM '/tmp/delta-table' RETAIN 0 HOURS")
+
+# COMMAND ----------
+
+# Check the Delta table history to see the vacuum operation
+spark.sql("DESCRIBE HISTORY delta.`/tmp/delta-table`").show()
