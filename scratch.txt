@@ -1,0 +1,9 @@
+pandas - Data manipulation
+numpy - Numerical computations
+pyspark - Apache Spark integration
+mlflow - Experiment tracking and model deployment
+matplotlib & seaborn - Data visualization
+scikit-learn - Machine learning
+tensorflow & pytorch - Deep learning frameworks
+
+
