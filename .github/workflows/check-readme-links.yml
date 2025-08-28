@@ -16,7 +16,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Check README Links
-        uses: lycheeverse/lychee-action@v1
+        uses: lycheeverse/lychee-action@v2.0.2
         with:
           args: --verbose README.md # Limit the scope to README.md, verbose for details
           fail: true # Fail the action if broken links are found
